@@ -3,7 +3,6 @@ from flask_bootstrap import Bootstrap5
 from projects import projects
 from contact_form import ContactForm
 import os,dotenv,smtplib
-import email_validator
 
 dotenv.load_dotenv()
 
