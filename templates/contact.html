@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block title %}Blaine Silva | Personal Portfolio{% endblock %}
+
+{% block content %}
+<div style="background-color:#E6E6E6;">
+  <div class="main-container contact-container">
+    <div class="navbar shadow">
+      <ul class="navbar-menu">
+        <li><a class="a_link" href="/">Home</a></li>
+        <li><a class="a_link" href="/about">About</a></li>
+        <li><a class="a_link" href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="container rounded-4" >
+      <img class="profile" src="/static/img/profile.jpg" alt="Blaine Silva's photo"/>
+    </div>
+    <div class="h1">
+      <h1 class="pres-text">You can <span>Contact Me</span>.</h1>
+      <h2 class="pres-text">{{ message }}</h2>
+    </div>
+    <div class="contact">
+      <div class="contact-form shadow">
+        {{ render_form(form) }}
+      </div>
+      <div class="links_about">
+      <div class="icon_links shadow">
+        <a href="https://instagram/blainesilva16" target="_blank">
+          <img src="/static/img/instagram.png"/>
+        </a>
+      </div>
+      <div class="icon_links shadow">
+        <a href="https://www.linkedin.com/in/blaine-silva-0ab04a178" target="_blank">
+          <img style="border-radius:5px" src="/static/img/linkedin.png"/>
+        </a>
+      </div>
+      <div class="icon_links shadow">
+        <a href="https://github.com/blainesilva16" target="_blank">
+          <img src="/static/img/github.png"/>
+        </a>
+      </div>
+      <div class="icon_links shadow">
+        <a href="#">
+          <img src="/static/img/youtube.png"/>
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

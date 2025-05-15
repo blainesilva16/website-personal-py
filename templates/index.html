@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}Blaine Silva | Personal Portfolio{% endblock %}
+
+{% block content %}
+<div style="background-color:#E6E6E6;">
+  <div class="main-container">
+    <div class="navbar shadow">
+      <ul class="navbar-menu">
+        <li><a class="a_link" href="/">Home</a></li>
+        <li><a class="a_link" href="/about">About</a></li>
+        <li><a class="a_link" href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="container rounded-4" >
+      <img class="profile" src="/static/img/profile.jpg" alt="Blaine Silva's photo"/>
+    </div>
+    <div class="h1">
+      <h1 class="pres-text">Hi! I'm <span>Blaine Silva</span>.</h1>
+      <h2 class="pres-text">A <span>Python</span> developer</h2>
+    </div>
+    <div class="works-button shadow">
+      <h4><a href="#projects">Click here</a></h4>
+      <p class="a_paragraph">to see a list of my works!</p>
+    </div>
+    <div class="description shadow">
+      <img style="border-radius:10px;max-width:80%" src="/static/img/cute.png"/>
+      <p class="a_paragraph">I'm currently a Junior Python Developer, who is willing to
+        learn new things and get better at my projects. </p>
+      <p class="a_paragraph"><b>My goal is to master
+        Python skills!</b></p>
+    </div>
+    <div class="links">
+      <div class="icon_links shadow">
+        <a href="https://instagram/blainesilva16" target="_blank">
+          <img src="/static/img/instagram.png"/>
+        </a>
+      </div>
+      <div class="icon_links shadow">
+        <a href="https://www.linkedin.com/in/blaine-silva-0ab04a178" target="_blank">
+          <img style="border-radius:5px" src="/static/img/linkedin.png"/>
+        </a>
+      </div>
+      <div class="icon_links shadow">
+        <a href="https://github.com/blainesilva16" target="_blank">
+          <img src="/static/img/github.png"/>
+        </a>
+      </div>
+      <div class="icon_links shadow">
+        <a href="#">
+          <img src="/static/img/youtube.png"/>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="projects" class="projects shadow">
+    <h2>Some projects I have developed in Python:</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      {% for project in projects: %}
+      <div class="col">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <!-- Your existing card goes here -->
+              <div class="card card-cover h-100 text-bg-dark rounded-4 shadow-lg"
+                   style="background-image:url('/static/img/{{ project.img }}'); background-size:cover;">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                  <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{ project.name }}</h3>
+                </div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <!-- Back side content -->
+              <div class="card h-100 p-4 text-bg-dark rounded-4 shadow-lg y-scroll">
+                <h4>About this project</h4>
+                <p><b>{{ project.desc }}</b></p>
+                <p>{{ project.about }}</p>
+                <p><a href="{{ project.github }}" target="_blank">Link to the Project</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--      <div class="col">-->
+<!--        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image:url('/static/img/{{ project.img }}');background-size:70%">-->
+<!--          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">-->
+<!--            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{ project.name }}</h3>-->
+
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+      {% endfor %}
+    </div>
+  </div>
+  </div>
+{% endblock %}
