@@ -13,7 +13,7 @@ HOST = os.getenv("HOST")
 EMAIL = os.getenv("EMAIL")
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.getenv("FLASK_KEY")
 Bootstrap5(app)
 
 @app.route("/")
@@ -46,4 +46,4 @@ def contact():
     return render_template("contact.html", form=form, message="Fill the form below.")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
